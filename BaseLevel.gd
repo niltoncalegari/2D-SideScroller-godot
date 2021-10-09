@@ -10,7 +10,7 @@ func _ready():
 
 func register_player(player):
 	currentPlayerNode = player
-	currentPlayerNode.connect("died", self, "on_player_died", [], CONNECT_DEFERRED)
+	currentPlayerNode.connect("died", self, "on_player_died", [],CONNECT_DEFERRED)
 	
 func create_player():
 	var playerInstance = playerScene.instance()
