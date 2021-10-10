@@ -1,8 +1,14 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://assets/enemies/spikehead/character_0015.png" type="Texture" id=1]
 [ext_resource path="res://assets/enemies/spikehead/character_0016.png" type="Texture" id=2]
 [ext_resource path="res://scripts/SpikeHead.gd" type="Script" id=3]
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 5, 6 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 5, 6 )
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -12,26 +18,12 @@ animations = [ {
 "speed": 10.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 5, 6 )
-
-[sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 5, 6 )
+[sub_resource type="CircleShape2D" id=4]
+radius = 6.0
 
 [node name="SpikeHead" type="KinematicBody2D"]
 collision_layer = 0
 script = ExtResource( 3 )
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-frames = SubResource( 1 )
-animation = "walking"
-frame = 1
-playing = true
-offset = Vector2( 0, -12 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, -6 )
-shape = SubResource( 2 )
 
 [node name="GoalDetector" type="Area2D" parent="."]
 collision_layer = 131072
@@ -40,3 +32,21 @@ collision_mask = 131072
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GoalDetector"]
 position = Vector2( 0, -6 )
 shape = SubResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, -6 )
+shape = SubResource( 2 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+animation = "walking"
+playing = true
+offset = Vector2( 0, -12 )
+
+[node name="HazardArea" type="Area2D" parent="."]
+position = Vector2( 0, -6 )
+collision_layer = 262144
+collision_mask = 262144
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HazardArea"]
+shape = SubResource( 4 )
