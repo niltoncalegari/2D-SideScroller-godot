@@ -23,6 +23,8 @@ format = 1
 
 [node name="Flag" parent="." instance=ExtResource( 4 )]
 
+[node name="EnemiesGoals" type="Node2D" parent="."]
+
 [node name="Enemies" type="Node2D" parent="."]
 
 [node name="Collectibles" type="Node2D" parent="."]
