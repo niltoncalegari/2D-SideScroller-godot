@@ -111,8 +111,7 @@ disabled = true
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 4 )
-animation = "run"
-frame = 2
+animation = "idle"
 playing = true
 offset = Vector2( 2, -10 )
 
