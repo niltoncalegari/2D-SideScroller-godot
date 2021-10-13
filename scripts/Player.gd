@@ -81,14 +81,14 @@ func process_normal(delta):
 func process_dash(delta):
 	if (isStateNew):
 		$DashArea/CollisionShape2D.disabled = false
-		$AnimatedSprite.play("jump")
+		$AnimatedSprite.play("dash")
 		$HazardArea.collision_mask = dashHazardMask
 		var moveVector = get_movement_vector()
 		var velocityMod = 1
 		if(moveVector.x != 0):
 			velocityMod = sign(moveVector.x)
 		else:
-			velocityMod = 1 if $AnimatedSprite.flip_h else -1
+			velocityMod = -1 if $AnimatedSprite.flip_h else 1
 				
 		velocity = Vector2(maxDashSpeed * velocityMod, 0)
 		
@@ -111,11 +111,13 @@ func update_animation():
 		$AnimatedSprite.play("jump")
 	elif (moveVec.x != 0):
 		$AnimatedSprite.play("run")
+	elif (hasDash && Input.is_action_just_pressed("dash")):
+		$AnimatedSprite.play("dash")
 	else:
 		$AnimatedSprite.play("idle")
 	
 	if (moveVec.x != 0):
-		$AnimatedSprite.flip_h = true if moveVec.x > 0 else false
+		$AnimatedSprite.flip_h = false if moveVec.x > 0 else true
 		
 func on_hazard_area_entered(area2d):
 	emit_signal("died")
