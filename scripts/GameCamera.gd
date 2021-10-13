@@ -10,9 +10,9 @@ var yNoiseSampleVector = Vector2.DOWN
 var xNoiseSamplePosition = Vector2.ZERO
 var yNoiseSamplePosition = Vector2.ZERO
 var noiseSampleTravelRate = 500
-var maxShakeOffset = 6
+var maxShakeOffset = 10
 var currentShakePercentage = 0
-var shakeDecay = 4
+var shakeDecay = 3
 
 func _ready() -> void:
 	 VisualServer.set_default_clear_color(backgroundColor)

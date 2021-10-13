@@ -53,6 +53,11 @@ animations = [ {
 "name": "jump",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 16 ), ExtResource( 17 ), ExtResource( 15 ), ExtResource( 1 ), ExtResource( 13 ), ExtResource( 14 ) ],
+"loop": true,
+"name": "run",
+"speed": 15.0
+}, {
 "frames": [ ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 27 ), ExtResource( 26 ), ExtResource( 25 ) ],
 "loop": true,
 "name": "die",
@@ -62,11 +67,6 @@ animations = [ {
 "loop": true,
 "name": "dash",
 "speed": 16.0
-}, {
-"frames": [ ExtResource( 16 ), ExtResource( 17 ), ExtResource( 15 ), ExtResource( 1 ), ExtResource( 13 ), ExtResource( 14 ) ],
-"loop": true,
-"name": "run",
-"speed": 15.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=5]
