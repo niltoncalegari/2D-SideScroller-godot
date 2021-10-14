@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/ZombieToast1.png-a50684d0a2c320ebc4b72f47b54a4a92.stex"
+path="res://.import/tile_0046.png-9038fce94fb8ac2beb856ee79620e0f4.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/player/Hero/ZombieToast1.png"
-dest_files=[ "res://.import/ZombieToast1.png-a50684d0a2c320ebc4b72f47b54a4a92.stex" ]
+source_file="res://assets/player/avatar/tile_0046.png"
+dest_files=[ "res://.import/tile_0046.png-9038fce94fb8ac2beb856ee79620e0f4.stex" ]
 
 [params]
 

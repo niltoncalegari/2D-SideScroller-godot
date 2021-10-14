@@ -18,6 +18,7 @@ var hasDoubleJump = false
 var hasDash = false
 var currentState = State.NORMAL
 var isStateNew = true
+var previouslyFloored = false
 
 var defaultHazardMask = 0
 
@@ -45,6 +46,9 @@ func process_normal(delta):
 		
 	var moveVector = get_movement_vector()
 	
+	# Effects
+	$AnimatedSprite.scale = $AnimatedSprite.scale.linear_interpolate(Vector2(1, 1), delta * 8)
+	
 	velocity.x += moveVector.x * horizontalAcceleration * delta
 	if (moveVector.x == 0):
 		velocity.x = lerp(0, velocity.x, pow(2, -50 * delta))
@@ -53,7 +57,9 @@ func process_normal(delta):
 	
 	if (moveVector.y < 0 && (is_on_floor() || !$CoyoteTimer.is_stopped() || hasDoubleJump)):
 		velocity.y = moveVector.y * jumSpeed
+		$AnimatedSprite.scale = Vector2(0.5, 1.5)
 		if (!is_on_floor() && $CoyoteTimer.is_stopped()):
+			$AnimatedSprite.scale = Vector2(0.5, 1.5)
 			$"/root/Helper".apply_camera_shake(.75)
 			hasDoubleJump = false
 		$CoyoteTimer.stop()
@@ -69,6 +75,11 @@ func process_normal(delta):
 	if(wasOnFloor && !is_on_floor()):
 		$CoyoteTimer.start()
 		
+	if is_on_floor() and !previouslyFloored:
+		$AnimatedSprite.scale = Vector2(1.3, 0.75)
+	
+	previouslyFloored = is_on_floor()
+		
 	if (is_on_floor()):
 		hasDoubleJump = true
 		hasDash = true
@@ -81,9 +92,10 @@ func process_normal(delta):
 	
 func process_dash(delta):
 	if (isStateNew):
+		$AnimatedSprite.scale = Vector2(1.25, 0.75)
 		$"/root/Helper".apply_camera_shake(1.75)
 		$DashArea/CollisionShape2D.disabled = false
-		$AnimatedSprite.play("dash")
+		$AnimatedSprite.play("jump")
 		$HazardArea.collision_mask = dashHazardMask
 		var moveVector = get_movement_vector()
 		var velocityMod = 1
@@ -114,7 +126,7 @@ func update_animation():
 	elif (moveVec.x != 0):
 		$AnimatedSprite.play("run")
 	elif (hasDash && Input.is_action_just_pressed("dash")):
-		$AnimatedSprite.play("dash")
+		$AnimatedSprite.play("jump")
 	else:
 		$AnimatedSprite.play("idle")
 	
