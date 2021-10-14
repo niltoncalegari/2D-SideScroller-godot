@@ -2,6 +2,8 @@ extends KinematicBody2D
 
 signal died
 
+var playerDeathScene = preload("res://scenes/PlayerDeath.tscn")
+
 enum State {NORMAL, DASHING}
 
 export(int, LAYERS_2D_PHYSICS) var dashHazardMask
@@ -59,6 +61,7 @@ func process_normal(delta):
 		velocity.y = moveVector.y * jumSpeed
 		$AnimatedSprite.scale = Vector2(0.5, 1.5)
 		if (!is_on_floor() && $CoyoteTimer.is_stopped()):
+			$AnimatedSprite.scale = Vector2(1.5, 0.5)
 			$AnimatedSprite.scale = Vector2(0.5, 1.5)
 			$"/root/Helper".apply_camera_shake(.75)
 			hasDoubleJump = false
@@ -133,6 +136,13 @@ func update_animation():
 	if (moveVec.x != 0):
 		$AnimatedSprite.flip_h = false if moveVec.x > 0 else true
 		
-func on_hazard_area_entered(area2d):
-	$"/root/Helper".apply_camera_shake(1)
+func kill():
+	var playerDeathInstance = playerDeathScene.instance()
+	get_parent().add_child_below_node(self, playerDeathInstance)
+	playerDeathInstance.global_position = global_position
+	playerDeathInstance.velocity = velocity
 	emit_signal("died")
+		
+func on_hazard_area_entered(_area2d):
+	$"/root/Helper".apply_camera_shake(1)
+	call_deferred("kill")
