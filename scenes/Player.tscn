@@ -22,15 +22,15 @@ animations = [ {
 "name": "idle",
 "speed": 6.0
 }, {
-"frames": [ ExtResource( 4 ) ],
-"loop": true,
-"name": "jump",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 3 ), ExtResource( 4 ) ],
 "loop": true,
 "name": "run",
 "speed": 10.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "jump",
+"speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=5]
@@ -74,6 +74,7 @@ shape = SubResource( 3 )
 disabled = true
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+scale = Vector2( 1.2, 1.2 )
 frames = SubResource( 4 )
 animation = "idle"
 frame = 1
