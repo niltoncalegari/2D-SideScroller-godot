@@ -44,6 +44,7 @@ func change_state(newState):
 
 func process_normal(delta):
 	if (isStateNew):
+		$DashParticle.emitting = false
 		$DashArea/CollisionShape2D.disabled = true
 		$HazardArea.collision_mask = defaultHazardMask
 		
@@ -60,10 +61,10 @@ func process_normal(delta):
 	
 	if (moveVector.y < 0 && (is_on_floor() || !$CoyoteTimer.is_stopped() || hasDoubleJump)):
 		velocity.y = moveVector.y * jumSpeed
-		$AnimatedSprite.scale = Vector2(0.5, 1.5)
+		$AnimatedSprite.scale = Vector2(0.5, 1.10)
 		if (!is_on_floor() && $CoyoteTimer.is_stopped()):
-			$AnimatedSprite.scale = Vector2(1.5, 0.5)
-			$AnimatedSprite.scale = Vector2(0.5, 1.5)
+			$AnimatedSprite.scale = Vector2(1.10, 0.5)
+			$AnimatedSprite.scale = Vector2(0.5, 1.10)
 			$"/root/Helper".apply_camera_shake(.75)
 			hasDoubleJump = false
 		$CoyoteTimer.stop()
@@ -80,7 +81,7 @@ func process_normal(delta):
 		$CoyoteTimer.start()
 		
 	if is_on_floor() and !previouslyFloored:
-		$AnimatedSprite.scale = Vector2(1.3, 0.75)
+		$AnimatedSprite.scale = Vector2(1.25, 0.75)
 	
 	previouslyFloored = is_on_floor()
 		
@@ -96,6 +97,7 @@ func process_normal(delta):
 	
 func process_dash(delta):
 	if (isStateNew):
+		$DashParticle.emitting = true
 		$AnimatedSprite.scale = Vector2(1.25, 0.75)
 		$"/root/Helper".apply_camera_shake(1.75)
 		$DashArea/CollisionShape2D.disabled = false

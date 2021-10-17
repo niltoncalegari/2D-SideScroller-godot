@@ -2,24 +2,28 @@ extends KinematicBody2D
 
 var enemyDeathScene = preload("res://scenes/EnemyDeath.tscn")
 
+export var isSpawning = true
 var maxSpeed = 25
 var velocity = Vector2.ZERO
 var direction = Vector2.ZERO
 var gravity = 500
 var startDirection = Vector2.RIGHT
 
-func _ready():
+func _ready():	
 	direction = startDirection
 	$GoalDetector.connect("area_entered", self, "on_goal_entered")
 	$HitboxArea.connect("area_entered", self, "on_hitbox_entered")
 
 func _process(delta):
-	velocity.x = (direction * maxSpeed).x
-	
-	velocity.y += gravity * delta
-	velocity = move_and_slide(velocity, Vector2.UP)
-	
-	$AnimatedSprite.flip_h = true if direction.x > 0 else false
+	if (isSpawning):
+		return
+	else:
+		velocity.x = (direction * maxSpeed).x
+		
+		velocity.y += gravity * delta
+		velocity = move_and_slide(velocity, Vector2.UP)
+		
+		$Visuals/AnimatedSprite.flip_h = true if direction.x > 0 else false
 
 func kill():
 	var deathInstance = enemyDeathScene.instance()

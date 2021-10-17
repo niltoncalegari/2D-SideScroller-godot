@@ -1,9 +1,37 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://assets/player/avatar/bunny_idle2.png" type="Texture" id=1]
 [ext_resource path="res://scripts/Player.gd" type="Script" id=2]
 [ext_resource path="res://assets/player/avatar/bunny_idle1.png" type="Texture" id=3]
 [ext_resource path="res://assets/player/avatar/tile_0046.png" type="Texture" id=4]
+[ext_resource path="res://assets/player/avatar/dash.png" type="Texture" id=5]
+
+[sub_resource type="Shader" id=7]
+code = "shader_type canvas_item;
+
+uniform vec4 baseColor : hint_color;
+
+void fragment() {
+	vec4 texColor = texture(TEXTURE, UV);
+	COLOR.rgba = vec4(baseColor.r, baseColor.g, baseColor.b, texColor.a);
+}"
+
+[sub_resource type="ShaderMaterial" id=8]
+shader = SubResource( 7 )
+shader_param/baseColor = Color( 0.00392157, 0.592157, 0.776471, 1 )
+
+[sub_resource type="Curve" id=9]
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.245283, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=10]
+curve = SubResource( 9 )
+
+[sub_resource type="ParticlesMaterial" id=6]
+flag_disable_z = true
+gravity = Vector3( 0, 0, 0 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale_curve = SubResource( 10 )
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 16.0
@@ -47,7 +75,20 @@ dashHazardMask = 262144
 wait_time = 0.15
 one_shot = true
 
+[node name="DashParticle" type="Particles2D" parent="."]
+show_behind_parent = true
+material = SubResource( 8 )
+position = Vector2( 0, -7 )
+scale = Vector2( 1.2, 1.2 )
+emitting = false
+amount = 15
+lifetime = 0.4
+local_coords = false
+process_material = SubResource( 6 )
+texture = ExtResource( 5 )
+
 [node name="PickupArea" type="Area2D" parent="."]
+visible = false
 collision_layer = 524288
 collision_mask = 524288
 
@@ -56,6 +97,7 @@ position = Vector2( 0, -11 )
 shape = SubResource( 1 )
 
 [node name="HazardArea" type="Area2D" parent="."]
+visible = false
 position = Vector2( 0, -7.1149 )
 collision_layer = 0
 collision_mask = 327680
@@ -64,6 +106,7 @@ collision_mask = 327680
 shape = SubResource( 2 )
 
 [node name="DashArea" type="Area2D" parent="."]
+visible = false
 position = Vector2( 0, -11 )
 collision_layer = 0
 collision_mask = 2
@@ -77,9 +120,9 @@ disabled = true
 scale = Vector2( 1.2, 1.2 )
 frames = SubResource( 4 )
 animation = "idle"
-frame = 1
 offset = Vector2( 0, -8 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2( -0.0922623, -8.05318 )
 shape = SubResource( 5 )
