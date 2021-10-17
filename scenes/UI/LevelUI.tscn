@@ -16,6 +16,18 @@ frame_1/delay_sec = 0.0
 [node name="LevelUI" type="CanvasLayer"]
 script = ExtResource( 2 )
 
+[node name="CoinLabel" type="Label" parent="."]
+margin_left = 18.3783
+margin_top = 6.62158
+margin_right = 43.3783
+margin_bottom = 16.6216
+size_flags_horizontal = 0
+custom_fonts/font = ExtResource( 3 )
+text = "10/32"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -28,7 +40,7 @@ __meta__ = {
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
 margin_left = 4.0
 margin_top = 4.0
-margin_right = 43.0
+margin_right = 17.0
 margin_bottom = 17.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
@@ -41,12 +53,3 @@ rect_min_size = Vector2( 13, 13 )
 size_flags_vertical = 8
 texture = SubResource( 1 )
 expand = true
-
-[node name="CoinLabel" type="Label" parent="MarginContainer/HBoxContainer"]
-margin_left = 14.0
-margin_top = 1.0
-margin_right = 39.0
-margin_bottom = 11.0
-size_flags_horizontal = 0
-custom_fonts/font = ExtResource( 3 )
-text = "10/32"

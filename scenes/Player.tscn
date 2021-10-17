@@ -6,7 +6,7 @@
 [ext_resource path="res://assets/player/avatar/tile_0046.png" type="Texture" id=4]
 [ext_resource path="res://assets/player/avatar/dash.png" type="Texture" id=5]
 
-[sub_resource type="Shader" id=7]
+[sub_resource type="Shader" id=1]
 code = "shader_type canvas_item;
 
 uniform vec4 baseColor : hint_color;
@@ -16,34 +16,34 @@ void fragment() {
 	COLOR.rgba = vec4(baseColor.r, baseColor.g, baseColor.b, texColor.a);
 }"
 
-[sub_resource type="ShaderMaterial" id=8]
-shader = SubResource( 7 )
+[sub_resource type="ShaderMaterial" id=2]
+shader = SubResource( 1 )
 shader_param/baseColor = Color( 0.00392157, 0.592157, 0.776471, 1 )
 
-[sub_resource type="Curve" id=9]
+[sub_resource type="Curve" id=3]
 _data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.245283, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=10]
-curve = SubResource( 9 )
+[sub_resource type="CurveTexture" id=4]
+curve = SubResource( 3 )
 
-[sub_resource type="ParticlesMaterial" id=6]
+[sub_resource type="ParticlesMaterial" id=5]
 flag_disable_z = true
 gravity = Vector3( 0, 0, 0 )
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
-scale_curve = SubResource( 10 )
+scale_curve = SubResource( 4 )
 
-[sub_resource type="CircleShape2D" id=1]
+[sub_resource type="CircleShape2D" id=6]
 radius = 16.0
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 4, 7 )
 
-[sub_resource type="CapsuleShape2D" id=3]
+[sub_resource type="CapsuleShape2D" id=8]
 radius = 11.0
 height = 10.0
 
-[sub_resource type="SpriteFrames" id=4]
+[sub_resource type="SpriteFrames" id=9]
 animations = [ {
 "frames": [ ExtResource( 3 ), ExtResource( 1 ) ],
 "loop": true,
@@ -61,7 +61,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="RectangleShape2D" id=10]
 extents = Vector2( 5, 8 )
 
 [node name="Player" type="KinematicBody2D" groups=[
@@ -77,14 +77,14 @@ one_shot = true
 
 [node name="DashParticle" type="Particles2D" parent="."]
 show_behind_parent = true
-material = SubResource( 8 )
+material = SubResource( 2 )
 position = Vector2( 0, -7 )
 scale = Vector2( 1.2, 1.2 )
 emitting = false
 amount = 15
 lifetime = 0.4
 local_coords = false
-process_material = SubResource( 6 )
+process_material = SubResource( 5 )
 texture = ExtResource( 5 )
 
 [node name="PickupArea" type="Area2D" parent="."]
@@ -94,7 +94,7 @@ collision_mask = 524288
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PickupArea"]
 position = Vector2( 0, -11 )
-shape = SubResource( 1 )
+shape = SubResource( 6 )
 
 [node name="HazardArea" type="Area2D" parent="."]
 visible = false
@@ -103,7 +103,7 @@ collision_layer = 0
 collision_mask = 327680
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HazardArea"]
-shape = SubResource( 2 )
+shape = SubResource( 7 )
 
 [node name="DashArea" type="Area2D" parent="."]
 visible = false
@@ -113,16 +113,16 @@ collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DashArea"]
 rotation = 1.5708
-shape = SubResource( 3 )
+shape = SubResource( 8 )
 disabled = true
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 1.2, 1.2 )
-frames = SubResource( 4 )
+frames = SubResource( 9 )
 animation = "idle"
 offset = Vector2( 0, -8 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
 position = Vector2( -0.0922623, -8.05318 )
-shape = SubResource( 5 )
+shape = SubResource( 10 )

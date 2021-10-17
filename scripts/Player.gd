@@ -63,10 +63,10 @@ func process_normal(delta):
 	
 	if (moveVector.y < 0 && (is_on_floor() || !$CoyoteTimer.is_stopped() || hasDoubleJump)):
 		velocity.y = moveVector.y * jumSpeed
-		$AnimatedSprite.scale = Vector2(0.5, 1.10)
+		$AnimatedSprite.scale = Vector2(0.5, 1.5)
 		if (!is_on_floor() && $CoyoteTimer.is_stopped()):
-			$AnimatedSprite.scale = Vector2(1.10, 0.5)
-			$AnimatedSprite.scale = Vector2(0.5, 1.10)
+			$AnimatedSprite.scale = Vector2(1.5, 0.5)
+			$AnimatedSprite.scale = Vector2(0.5, 1.5)
 			$"/root/Helper".apply_camera_shake(.75)
 			hasDoubleJump = false
 		$CoyoteTimer.stop()
@@ -86,7 +86,7 @@ func process_normal(delta):
 		spawn_footsteps(1.5)
 		
 	if is_on_floor() and !previouslyFloored:
-		$AnimatedSprite.scale = Vector2(1.25, 0.75)
+		$AnimatedSprite.scale = Vector2(1.35, 0.75)
 	
 	previouslyFloored = is_on_floor()
 		
