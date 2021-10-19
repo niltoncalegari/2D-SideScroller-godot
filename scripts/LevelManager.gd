@@ -9,7 +9,7 @@ func change_level(levelIndex):
 	if (currentLevelIndex >= levelScenes.size()):
 		currentLevelIndex = 0
 		
-	get_tree().change_scene(levelScenes[currentLevelIndex].resource_path)
+	$"/root/ScreenTransitionManager".transition_to_scene(levelScenes[currentLevelIndex].resource_path)	
 
 # this method change current level to the next level
 func increment_level():
