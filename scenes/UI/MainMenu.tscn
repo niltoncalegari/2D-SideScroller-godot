@@ -1,73 +1,34 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://resources/theme.tres" type="Theme" id=1]
 [ext_resource path="res://scenes/UI/AnimatedButton.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scripts/MainMenu.gd" type="Script" id=3]
-[ext_resource path="res://scenes/GameCamera.tscn" type="PackedScene" id=4]
-[ext_resource path="res://resources/tileset.tres" type="TileSet" id=6]
-[ext_resource path="res://scenes/Clouds.tscn" type="PackedScene" id=7]
-[ext_resource path="res://resources/decorative_tileset.tres" type="TileSet" id=8]
-[ext_resource path="res://scenes/SpikeHead.tscn" type="PackedScene" id=9]
-[ext_resource path="res://scenes/Spikes.tscn" type="PackedScene" id=10]
-[ext_resource path="res://scenes/EnemyGoal.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scenes/UI/MenuBackground.tscn" type="PackedScene" id=4]
+
+[sub_resource type="Animation" id=1]
+resource_name = "default"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("MarginContainer/PanelContainer:rect_scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 1.1, 1.1 ), Vector2( 0.9, 0.9 ), Vector2( 1, 1 ) ]
+}
 
 [node name="MainMenu" type="CanvasLayer"]
 script = ExtResource( 3 )
 
-[node name="Node2D" type="Node2D" parent="."]
-position = Vector2( 162, 108 )
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "default"
+anims/default = SubResource( 1 )
 
-[node name="GameCamera" parent="Node2D" instance=ExtResource( 4 )]
-
-[node name="Clouds" parent="Node2D/GameCamera" instance=ExtResource( 7 )]
-
-[node name="TileMap" type="TileMap" parent="Node2D"]
-tile_set = ExtResource( 6 )
-cell_size = Vector2( 18, 18 )
-format = 1
-tile_data = PoolIntArray( -393214, 1, 0, -393213, 1, 0, -393212, 1, 0, -393211, 1, 0, -393210, 2, 1, -393209, 2, 2, -393208, 2, 3, -327674, 2, 131073, -327673, 2, 131074, -327672, 2, 131075, -262144, 2, 1, -262143, 2, 2, -262142, 2, 2, -262141, 2, 3, -131080, 2, 1, -131079, 2, 2, -131078, 2, 3, -196608, 2, 65537, -196607, 2, 65538, -196606, 2, 65538, -196605, 2, 65539, -65544, 2, 131073, -65543, 2, 131074, -65542, 2, 131075, -131072, 2, 131073, -131071, 2, 131074, -131070, 2, 131074, -131069, 2, 131075, -65531, 6, 0, -65530, 6, 1, -65529, 6, 1, -65528, 6, 1, -65527, 6, 2, 5, 6, 65536, 6, 6, 65537, 7, 6, 65537, 8, 6, 65537, 9, 6, 65538, 131060, 6, 0, 131061, 6, 1, 131062, 6, 1, 131063, 6, 1, 131064, 6, 1, 131065, 6, 1, 131066, 6, 2, 65539, 6, 0, 65540, 6, 1, 65541, 6, 65540, 65542, 6, 65537, 65543, 6, 65537, 65544, 6, 65537, 65545, 6, 65538, 196596, 6, 65536, 196597, 6, 65537, 196598, 6, 65537, 196599, 6, 65537, 196600, 6, 65537, 196601, 6, 65537, 196602, 6, 65538, 131075, 6, 65536, 131076, 6, 65537, 131077, 6, 65537, 131078, 6, 65537, 131079, 6, 65537, 131080, 6, 65537, 131081, 6, 65538, 262132, 6, 65536, 262133, 6, 65537, 262134, 6, 65537, 262135, 6, 65537, 262136, 6, 65537, 262137, 6, 65537, 262138, 6, 65539, 262139, 6, 1, 262140, 6, 2, 262142, 6, 0, 262143, 6, 1, 196608, 6, 1, 196609, 6, 1, 196610, 6, 1, 196611, 6, 65540, 196612, 6, 65537, 196613, 6, 65537, 196614, 6, 65537, 196615, 6, 65537, 196616, 6, 65537, 196617, 6, 65538, 327668, 6, 65536, 327669, 6, 65537, 327670, 6, 65537, 327671, 6, 65537, 327672, 6, 65537, 327673, 6, 65537, 327674, 6, 65537, 327675, 6, 65537, 327676, 6, 65539, 327677, 6, 1, 327678, 6, 65540, 327679, 6, 65537, 262144, 6, 65537, 262145, 6, 65537, 262146, 6, 65537, 262147, 6, 65537, 262148, 6, 65537, 262149, 6, 65537, 262150, 6, 65537, 262151, 6, 65537, 262152, 6, 65537, 262153, 6, 65538, 393204, 6, 65536, 393205, 6, 65537, 393206, 6, 65537, 393207, 6, 65537, 393208, 6, 65537, 393209, 6, 65537, 393210, 6, 65537, 393211, 6, 65537, 393212, 6, 65537, 393213, 6, 65537, 393214, 6, 65537, 393215, 6, 65537, 327680, 6, 65537, 327681, 6, 65537, 327682, 6, 65537, 327683, 6, 65537, 327684, 6, 65537, 327685, 6, 65537, 327686, 6, 65537, 327687, 6, 65537, 327688, 6, 65537, 327689, 6, 65538, 458740, 6, 131072, 458741, 6, 131073, 458742, 6, 131073, 458743, 6, 131073, 458744, 6, 131073, 458745, 6, 131073, 458746, 6, 131073, 458747, 6, 131073, 458748, 6, 131073, 458749, 6, 131073, 458750, 6, 131073, 458751, 6, 131073, 393216, 6, 131073, 393217, 6, 131073, 393218, 6, 131073, 393219, 6, 131073, 393220, 6, 131073, 393221, 6, 131073, 393222, 6, 131073, 393223, 6, 131073, 393224, 6, 131073, 393225, 6, 131074 )
-
-[node name="DecorativeTileMap" type="TileMap" parent="Node2D"]
-tile_set = ExtResource( 8 )
-cell_size = Vector2( 18, 18 )
-format = 1
-tile_data = PoolIntArray( -327673, 1, 1, -262137, 1, 0, -196601, 1, 65536, -65543, 1, 1, -131070, 1, 1, -131065, 1, 131073, -8, 1, 2, -7, 1, 65537, -6, 1, 65539, -5, 1, 131075, -65534, 1, 131074, -65533, 1, 131075, 65529, 1, 131073, 0, 1, 2, 1, 1, 65539, 2, 1, 131072, 65538, 1, 0, 131074, 1, 131073 )
-
-[node name="ForegroundTileMap" type="TileMap" parent="Node2D"]
-tile_set = ExtResource( 6 )
-cell_size = Vector2( 18, 18 )
-format = 1
-tile_data = PoolIntArray( -196617, 2, 1, -196616, 2, 3, -131081, 2, 131073, -131080, 2, 131075, -196605, 2, 1, -196604, 2, 3, -65542, 2, 1, -65541, 2, 3, -65537, 2, 1, -131072, 2, 3, -131069, 2, 65537, -131068, 2, 65539, -6, 2, 131073, -5, 2, 131075, -1, 2, 65537, -65536, 2, 65539, -65533, 2, 131073, -65532, 2, 131075, 65535, 2, 131073, 0, 2, 131075 )
-
-[node name="Enemies" type="Node2D" parent="Node2D"]
-
-[node name="SpikeHead" parent="Node2D/Enemies" instance=ExtResource( 9 )]
-position = Vector2( -18, 54 )
-
-[node name="EnemiesGoals" type="Node2D" parent="Node2D"]
-
-[node name="EnemyGoal" parent="Node2D/EnemiesGoals" instance=ExtResource( 11 )]
-position = Vector2( -36, 54 )
-
-[node name="EnemyGoal2" parent="Node2D/EnemiesGoals" instance=ExtResource( 11 )]
-position = Vector2( 45, 54 )
-
-[node name="Obstacles" type="Node2D" parent="Node2D"]
-
-[node name="Spikes" parent="Node2D/Obstacles" instance=ExtResource( 10 )]
-position = Vector2( -45, 72 )
-
-[node name="Spikes2" parent="Node2D/Obstacles" instance=ExtResource( 10 )]
-position = Vector2( -153, 18 )
-
-[node name="Spikes3" parent="Node2D/Obstacles" instance=ExtResource( 10 )]
-position = Vector2( -135, 18 )
-
-[node name="Spikes4" parent="Node2D/Obstacles" instance=ExtResource( 10 )]
-position = Vector2( 153, -18 )
-
-[node name="Spikes5" parent="Node2D/Obstacles" instance=ExtResource( 10 )]
-position = Vector2( 81, 18 )
+[node name="MenuBackground" parent="." instance=ExtResource( 4 )]
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchor_right = 1.0
@@ -82,6 +43,7 @@ margin_left = 96.0
 margin_top = 38.0
 margin_right = 224.0
 margin_bottom = 142.0
+rect_pivot_offset = Vector2( 64, 50 )
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
