@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/impactMetal_light_001.ogg-7a81f68c1bf637a35f803c5b0b4f0a19.oggstr"
+
+[deps]
+
+source_file="res://assets/audio/impactMetal_light_001.ogg"
+dest_files=[ "res://.import/impactMetal_light_001.ogg-7a81f68c1bf637a35f803c5b0b4f0a19.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

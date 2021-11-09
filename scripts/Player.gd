@@ -169,6 +169,7 @@ func spawn_footsteps(scale = 0.9):
 	get_parent().add_child(footstep)
 	footstep.scale = Vector2.ONE * scale
 	footstep.global_position = global_position
+	$FootstepsAudioPlayer.play()
 	
 func  disable_player_input():
 	change_state(State.INPUT_DISABLED)

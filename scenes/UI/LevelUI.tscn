@@ -1,14 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://resources/theme.tres" type="Theme" id=1]
 [ext_resource path="res://scenes/UI/CoinCounter.tscn" type="PackedScene" id=3]
 
-[sub_resource type="GDScript" id=1]
-script/source = "extends CanvasLayer
-"
-
 [node name="LevelUI" type="CanvasLayer"]
-script = SubResource( 1 )
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchor_right = 1.0
