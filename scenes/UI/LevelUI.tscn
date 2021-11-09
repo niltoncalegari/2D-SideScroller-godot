@@ -1,32 +1,14 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://resources/theme.tres" type="Theme" id=1]
-[ext_resource path="res://scripts/LevelUI.gd" type="Script" id=2]
-[ext_resource path="res://resources/font_outline.tres" type="DynamicFont" id=3]
-[ext_resource path="res://assets/coin/tile_0151.png" type="Texture" id=4]
-[ext_resource path="res://assets/coin/tile_0152.png" type="Texture" id=5]
+[ext_resource path="res://scenes/UI/CoinCounter.tscn" type="PackedScene" id=3]
 
-[sub_resource type="AnimatedTexture" id=1]
-frames = 2
-fps = 6.0
-frame_0/texture = ExtResource( 4 )
-frame_1/texture = ExtResource( 5 )
-frame_1/delay_sec = 0.0
+[sub_resource type="GDScript" id=1]
+script/source = "extends CanvasLayer
+"
 
 [node name="LevelUI" type="CanvasLayer"]
-script = ExtResource( 2 )
-
-[node name="CoinLabel" type="Label" parent="."]
-margin_left = 18.3783
-margin_top = 6.62158
-margin_right = 43.3783
-margin_bottom = 16.6216
-size_flags_horizontal = 0
-custom_fonts/font = ExtResource( 3 )
-text = "10/32"
-__meta__ = {
-"_edit_use_anchors_": false
-}
+script = SubResource( 1 )
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchor_right = 1.0
@@ -37,19 +19,5 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
-margin_left = 4.0
-margin_top = 4.0
-margin_right = 17.0
-margin_bottom = 17.0
-size_flags_horizontal = 0
-size_flags_vertical = 0
-custom_constants/separation = 1
-
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer"]
-margin_right = 13.0
-margin_bottom = 13.0
-rect_min_size = Vector2( 13, 13 )
-size_flags_vertical = 8
-texture = SubResource( 1 )
-expand = true
+[node name="CoinCounter" parent="MarginContainer" instance=ExtResource( 3 )]
+script = null

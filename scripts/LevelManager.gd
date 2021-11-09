@@ -14,3 +14,6 @@ func change_level(levelIndex):
 # this method change current level to the next level
 func increment_level():
 	change_level(currentLevelIndex + 1)
+
+func restart_level():
+	change_level(currentLevelIndex)
