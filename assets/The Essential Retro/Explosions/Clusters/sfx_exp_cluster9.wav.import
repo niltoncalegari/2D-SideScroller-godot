@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/sfx_exp_cluster9.wav-635bf9dd6ea10d7f7e3055a7198979fc.sample"
+
+[deps]
+
+source_file="res://assets/The Essential Retro/Explosions/Clusters/sfx_exp_cluster9.wav"
+dest_files=[ "res://.import/sfx_exp_cluster9.wav-635bf9dd6ea10d7f7e3055a7198979fc.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

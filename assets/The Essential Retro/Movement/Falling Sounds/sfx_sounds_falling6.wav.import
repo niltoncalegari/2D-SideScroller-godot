@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/sfx_sounds_falling6.wav-17395c4a399d23576361f0074d051e40.sample"
+
+[deps]
+
+source_file="res://assets/The Essential Retro/Movement/Falling Sounds/sfx_sounds_falling6.wav"
+dest_files=[ "res://.import/sfx_sounds_falling6.wav-17395c4a399d23576361f0074d051e40.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/sfx_sounds_pause6_out.wav-915ae97bc00f7938027af7828d715fd4.sample"
+
+[deps]
+
+source_file="res://assets/The Essential Retro/General Sounds/Pause Sounds/sfx_sounds_pause6_out.wav"
+dest_files=[ "res://.import/sfx_sounds_pause6_out.wav-915ae97bc00f7938027af7828d715fd4.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

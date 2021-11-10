@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/sfx_wpn_laser8.wav-0e5ee9c8498014686dc0b301ca36cf53.sample"
+
+[deps]
+
+source_file="res://assets/The Essential Retro/Weapons/Lasers/sfx_wpn_laser8.wav"
+dest_files=[ "res://.import/sfx_wpn_laser8.wav-0e5ee9c8498014686dc0b301ca36cf53.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

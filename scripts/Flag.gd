@@ -7,4 +7,6 @@ func _ready() -> void:
 	
 func on_area_entered(_area2d):
 	emit_signal("player_won")
+	$WinSound.play()
+	$ConffetiSound.play()
 	$Particles2D.emitting = true

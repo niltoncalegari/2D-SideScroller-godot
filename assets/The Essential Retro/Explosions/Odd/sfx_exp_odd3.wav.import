@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/sfx_exp_odd3.wav-d76eb254b179b56c5f12eed26edacec0.sample"
+
+[deps]
+
+source_file="res://assets/The Essential Retro/Explosions/Odd/sfx_exp_odd3.wav"
+dest_files=[ "res://.import/sfx_exp_odd3.wav-d76eb254b179b56c5f12eed26edacec0.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

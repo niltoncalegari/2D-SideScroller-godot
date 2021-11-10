@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/sfx_vehicle_breaks.wav-2379ef73f0d024095140b1ca8343a877.sample"
+
+[deps]
+
+source_file="res://assets/The Essential Retro/Movement/Vehicles/sfx_vehicle_breaks.wav"
+dest_files=[ "res://.import/sfx_vehicle_breaks.wav-2379ef73f0d024095140b1ca8343a877.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

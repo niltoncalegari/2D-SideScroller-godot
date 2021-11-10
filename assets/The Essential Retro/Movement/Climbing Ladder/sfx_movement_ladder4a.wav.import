@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/sfx_movement_ladder4a.wav-af13c0fd781202ed0aa4a298b7a5c28e.sample"
+
+[deps]
+
+source_file="res://assets/The Essential Retro/Movement/Climbing Ladder/sfx_movement_ladder4a.wav"
+dest_files=[ "res://.import/sfx_movement_ladder4a.wav-af13c0fd781202ed0aa4a298b7a5c28e.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

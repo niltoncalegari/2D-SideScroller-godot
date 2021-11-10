@@ -104,6 +104,7 @@ func process_normal(delta):
 	
 func process_dash(delta):
 	if (isStateNew):
+		$DashSound.play()
 		$DashParticle.emitting = true
 		$AnimatedSprite.scale = Vector2(1.25, 0.75)
 		$"/root/Helper".apply_camera_shake(1.75)

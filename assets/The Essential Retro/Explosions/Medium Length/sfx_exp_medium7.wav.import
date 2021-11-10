@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/sfx_exp_medium7.wav-32074af9a7e3a06768a4034b7b06e75b.sample"
+
+[deps]
+
+source_file="res://assets/The Essential Retro/Explosions/Medium Length/sfx_exp_medium7.wav"
+dest_files=[ "res://.import/sfx_exp_medium7.wav-32074af9a7e3a06768a4034b7b06e75b.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

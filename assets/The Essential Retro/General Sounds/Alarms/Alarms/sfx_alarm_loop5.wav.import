@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/sfx_alarm_loop5.wav-d9e2e1e163bd78517ddca07b79194e77.sample"
+
+[deps]
+
+source_file="res://assets/The Essential Retro/General Sounds/Alarms/Alarms/sfx_alarm_loop5.wav"
+dest_files=[ "res://.import/sfx_alarm_loop5.wav-d9e2e1e163bd78517ddca07b79194e77.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

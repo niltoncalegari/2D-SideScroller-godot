@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/sfx_movement_jump6.wav-7081626157a0b9c9d7ef7a63cd38cbb6.sample"
+
+[deps]
+
+source_file="res://assets/The Essential Retro/Movement/Jumping and Landing/sfx_movement_jump6.wav"
+dest_files=[ "res://.import/sfx_movement_jump6.wav-7081626157a0b9c9d7ef7a63cd38cbb6.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

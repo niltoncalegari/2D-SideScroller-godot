@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/sfx_sounds_interaction25.wav-134bc1fff66515e629a1c82d17529346.sample"
+
+[deps]
+
+source_file="res://assets/The Essential Retro/General Sounds/Interactions/sfx_sounds_interaction25.wav"
+dest_files=[ "res://.import/sfx_sounds_interaction25.wav-134bc1fff66515e629a1c82d17529346.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/sfx_wpn_cannon3.wav-183a29117a536e7b38494155b2026267.sample"
+
+[deps]
+
+source_file="res://assets/The Essential Retro/Weapons/Cannon/sfx_wpn_cannon3.wav"
+dest_files=[ "res://.import/sfx_wpn_cannon3.wav-183a29117a536e7b38494155b2026267.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

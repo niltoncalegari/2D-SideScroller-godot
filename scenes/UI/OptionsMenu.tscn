@@ -36,10 +36,10 @@ __meta__ = {
 }
 
 [node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
-margin_left = 52.0
-margin_top = 41.0
-margin_right = 268.0
-margin_bottom = 139.0
+margin_left = 132.0
+margin_top = 86.0
+margin_right = 348.0
+margin_bottom = 184.0
 rect_pivot_offset = Vector2( 108, 49 )
 size_flags_horizontal = 4
 size_flags_vertical = 4

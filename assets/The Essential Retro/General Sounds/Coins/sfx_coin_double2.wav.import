@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/sfx_coin_double2.wav-68882a3175cec3d26a55da0b465a07f6.sample"
+
+[deps]
+
+source_file="res://assets/The Essential Retro/General Sounds/Coins/sfx_coin_double2.wav"
+dest_files=[ "res://.import/sfx_coin_double2.wav-68882a3175cec3d26a55da0b465a07f6.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/sfx_movement_stairs3a.wav-ffd242ff56a4f549afdf8a7c183831aa.sample"
+
+[deps]
+
+source_file="res://assets/The Essential Retro/Movement/Climbing Stairs/sfx_movement_stairs3a.wav"
+dest_files=[ "res://.import/sfx_movement_stairs3a.wav-ffd242ff56a4f549afdf8a7c183831aa.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -8,6 +8,8 @@ func on_area_entered(area2d):
 	call_deferred("disable_pickup")
 	var baseLevel = get_tree().get_nodes_in_group("base_level")[0]
 	baseLevel.coin_collected()
+	$CoinPickupSound.play()
+	$CoinPickupBackgroundSound2.play()
 	
 func disable_pickup():
 	$Area2D/CollisionShape2D.disabled = true

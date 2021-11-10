@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/sfx_sounds_error12.wav-04df7abc798559d9d266016870ad972f.sample"
+
+[deps]
+
+source_file="res://assets/The Essential Retro/General Sounds/Negative Sounds/sfx_sounds_error12.wav"
+dest_files=[ "res://.import/sfx_sounds_error12.wav-04df7abc798559d9d266016870ad972f.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

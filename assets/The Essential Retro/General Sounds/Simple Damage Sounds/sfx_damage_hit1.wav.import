@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/sfx_damage_hit1.wav-ff9124a4c5f5df0000cc6e3a8fc24522.sample"
+
+[deps]
+
+source_file="res://assets/The Essential Retro/General Sounds/Simple Damage Sounds/sfx_damage_hit1.wav"
+dest_files=[ "res://.import/sfx_damage_hit1.wav-ff9124a4c5f5df0000cc6e3a8fc24522.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

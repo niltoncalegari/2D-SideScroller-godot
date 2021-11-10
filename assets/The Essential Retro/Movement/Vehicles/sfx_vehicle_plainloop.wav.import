@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/sfx_vehicle_plainloop.wav-7a9e6a3b7a55d75d8bd27e8452fe8093.sample"
+
+[deps]
+
+source_file="res://assets/The Essential Retro/Movement/Vehicles/sfx_vehicle_plainloop.wav"
+dest_files=[ "res://.import/sfx_vehicle_plainloop.wav-7a9e6a3b7a55d75d8bd27e8452fe8093.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

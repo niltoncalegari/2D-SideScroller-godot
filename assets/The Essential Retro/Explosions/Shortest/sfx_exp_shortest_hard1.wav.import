@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/sfx_exp_shortest_hard1.wav-5f1f4dc59d60a950377cf658731195aa.sample"
+
+[deps]
+
+source_file="res://assets/The Essential Retro/Explosions/Shortest/sfx_exp_shortest_hard1.wav"
+dest_files=[ "res://.import/sfx_exp_shortest_hard1.wav-5f1f4dc59d60a950377cf658731195aa.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

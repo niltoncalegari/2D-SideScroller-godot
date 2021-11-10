@@ -19,6 +19,7 @@ config/icon="res://icon.png"
 LevelManager="*res://scenes/LevelManager.tscn"
 Helper="*res://scripts/Helper.gd"
 ScreenTransitionManager="*res://scenes/ScreenTransitionManager.tscn"
+MusicPlayer="*res://scenes/MusicPlayer.tscn"
 
 [display]
 

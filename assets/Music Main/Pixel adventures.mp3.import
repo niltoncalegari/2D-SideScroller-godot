@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Pixel adventures.mp3-5c71cd40c209f5178985a04db78fbea0.mp3str"
+
+[deps]
+
+source_file="res://assets/Music Main/Pixel adventures.mp3"
+dest_files=[ "res://.import/Pixel adventures.mp3-5c71cd40c209f5178985a04db78fbea0.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

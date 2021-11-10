@@ -1,10 +1,17 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://assets/flag/tile_0131.png" type="Texture" id=1]
 [ext_resource path="res://assets/flag/tile_0111.png" type="Texture" id=2]
 [ext_resource path="res://assets/flag/tile_0112.png" type="Texture" id=3]
 [ext_resource path="res://scripts/Flag.gd" type="Script" id=4]
 [ext_resource path="res://assets/effects/confetti.png" type="Texture" id=5]
+[ext_resource path="res://assets/curated_sounds/jingles_PIZZI10.ogg" type="AudioStream" id=6]
+[ext_resource path="res://scenes/Util/RandomAudioStreamPlayer.tscn" type="PackedScene" id=7]
+[ext_resource path="res://assets/audio/impactPlank_medium_002.ogg" type="AudioStream" id=8]
+[ext_resource path="res://assets/audio/impactPlank_medium_003.ogg" type="AudioStream" id=9]
+[ext_resource path="res://assets/audio/impactPlank_medium_004.ogg" type="AudioStream" id=10]
+[ext_resource path="res://assets/audio/impactPlank_medium_000.ogg" type="AudioStream" id=11]
+[ext_resource path="res://assets/audio/impactPlank_medium_001.ogg" type="AudioStream" id=12]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8, 18 )
@@ -63,6 +70,31 @@ anim_offset_random = 1.0
 [node name="Flag" type="Node2D"]
 script = ExtResource( 4 )
 
+[node name="WinSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+
+[node name="ConffetiSound" parent="." instance=ExtResource( 7 )]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="ConffetiSound"]
+stream = ExtResource( 11 )
+bus = "SFX"
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="ConffetiSound"]
+stream = ExtResource( 12 )
+bus = "SFX"
+
+[node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="ConffetiSound"]
+stream = ExtResource( 8 )
+bus = "SFX"
+
+[node name="AudioStreamPlayer4" type="AudioStreamPlayer" parent="ConffetiSound"]
+stream = ExtResource( 9 )
+bus = "SFX"
+
+[node name="AudioStreamPlayer5" type="AudioStreamPlayer" parent="ConffetiSound"]
+stream = ExtResource( 10 )
+bus = "SFX"
+
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2( 2.91352, -18.0109 )
 collision_layer = 524288
@@ -79,6 +111,7 @@ offset = Vector2( 0, -18 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 0, -13.8898 )
 frames = SubResource( 2 )
+frame = 1
 playing = true
 centered = false
 offset = Vector2( 0, -22 )

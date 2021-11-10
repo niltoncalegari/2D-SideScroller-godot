@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/sfx_sound_neutral5.wav-b98797e39295b560da08fff79fd34357.sample"
+
+[deps]
+
+source_file="res://assets/The Essential Retro/General Sounds/Neutral Sounds/sfx_sound_neutral5.wav"
+dest_files=[ "res://.import/sfx_sound_neutral5.wav-b98797e39295b560da08fff79fd34357.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=38 format=2]
 
 [ext_resource path="res://assets/player/avatar/bunny_idle1.png" type="Texture" id=1]
 [ext_resource path="res://scripts/PlayerDeath.gd" type="Script" id=2]
@@ -8,6 +8,26 @@
 [ext_resource path="res://assets/player/spirit/ZombieToast4.png" type="Texture" id=6]
 [ext_resource path="res://assets/player/spirit/ZombieToast1.png" type="Texture" id=7]
 [ext_resource path="res://assets/effects/particles.png" type="Texture" id=8]
+[ext_resource path="res://assets/audio/impactSoft_medium_003.ogg" type="AudioStream" id=9]
+[ext_resource path="res://assets/audio/impactSoft_heavy_004.ogg" type="AudioStream" id=10]
+[ext_resource path="res://assets/audio/footstep_snow_002.ogg" type="AudioStream" id=11]
+[ext_resource path="res://assets/audio/footstep_snow_004.ogg" type="AudioStream" id=12]
+[ext_resource path="res://assets/audio/impactSoft_heavy_003.ogg" type="AudioStream" id=13]
+[ext_resource path="res://assets/audio/impactSoft_medium_001.ogg" type="AudioStream" id=14]
+[ext_resource path="res://assets/audio/impactSoft_medium_000.ogg" type="AudioStream" id=15]
+[ext_resource path="res://assets/audio/footstep_snow_000.ogg" type="AudioStream" id=16]
+[ext_resource path="res://assets/audio/impactSoft_heavy_000.ogg" type="AudioStream" id=17]
+[ext_resource path="res://assets/audio/impactSoft_medium_004.ogg" type="AudioStream" id=18]
+[ext_resource path="res://assets/audio/footstep_snow_003.ogg" type="AudioStream" id=19]
+[ext_resource path="res://assets/audio/footstep_snow_001.ogg" type="AudioStream" id=20]
+[ext_resource path="res://assets/audio/impactSoft_heavy_002.ogg" type="AudioStream" id=21]
+[ext_resource path="res://assets/audio/impactSoft_heavy_001.ogg" type="AudioStream" id=22]
+[ext_resource path="res://assets/audio/impactSoft_medium_002.ogg" type="AudioStream" id=23]
+[ext_resource path="res://scenes/Util/RandomAudioStreamPlayer.tscn" type="PackedScene" id=24]
+[ext_resource path="res://assets/audio/footstep_carpet_004.ogg" type="AudioStream" id=25]
+[ext_resource path="res://assets/audio/footstep_carpet_002.ogg" type="AudioStream" id=26]
+[ext_resource path="res://assets/audio/footstep_carpet_001.ogg" type="AudioStream" id=27]
+[ext_resource path="res://assets/audio/footstep_carpet_000.ogg" type="AudioStream" id=28]
 
 [sub_resource type="Animation" id=1]
 resource_name = "death"
@@ -113,6 +133,20 @@ tracks/7/keys = {
 "update": 1,
 "values": [ false, true, false ]
 }
+tracks/8/type = "method"
+tracks/8/path = NodePath("PuffSound")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0.6 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "play"
+} ]
+}
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
@@ -122,18 +156,18 @@ animations = [ {
 "speed": 8.0
 } ]
 
-[sub_resource type="CanvasItemMaterial" id=4]
+[sub_resource type="CanvasItemMaterial" id=3]
 particles_animation = true
 particles_anim_h_frames = 3
 particles_anim_v_frames = 1
 particles_anim_loop = false
 
-[sub_resource type="Gradient" id=8]
+[sub_resource type="Gradient" id=4]
 offsets = PoolRealArray( 0.442149, 0.995868 )
 colors = PoolColorArray( 1, 1, 1, 1, 1, 1, 1, 0.427451 )
 
-[sub_resource type="GradientTexture" id=9]
-gradient = SubResource( 8 )
+[sub_resource type="GradientTexture" id=5]
+gradient = SubResource( 4 )
 
 [sub_resource type="Curve" id=6]
 _data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.177359, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.577358, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
@@ -141,7 +175,7 @@ _data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.177359, 1 ), 0.0, 0.0, 0, 
 [sub_resource type="CurveTexture" id=7]
 curve = SubResource( 6 )
 
-[sub_resource type="ParticlesMaterial" id=5]
+[sub_resource type="ParticlesMaterial" id=8]
 lifetime_randomness = 1.0
 emission_shape = 1
 emission_sphere_radius = 7.0
@@ -158,11 +192,11 @@ orbit_velocity_random = 0.0
 scale = 3.0
 scale_random = 1.0
 scale_curve = SubResource( 7 )
-color_ramp = SubResource( 9 )
+color_ramp = SubResource( 5 )
 anim_offset = 1.0
 anim_offset_random = 1.0
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=9]
 extents = Vector2( 5, 8 )
 
 [node name="PlayerDeath" type="KinematicBody2D" groups=[
@@ -175,10 +209,113 @@ script = ExtResource( 2 )
 autoplay = "death"
 anims/death = SubResource( 1 )
 
+[node name="DeathSoundPlayer" parent="." instance=ExtResource( 24 )]
+numberToPlay = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="DeathSoundPlayer"]
+stream = ExtResource( 17 )
+bus = "PlayerDeath"
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="DeathSoundPlayer"]
+stream = ExtResource( 22 )
+bus = "PlayerDeath"
+
+[node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="DeathSoundPlayer"]
+stream = ExtResource( 21 )
+bus = "PlayerDeath"
+
+[node name="AudioStreamPlayer4" type="AudioStreamPlayer" parent="DeathSoundPlayer"]
+stream = ExtResource( 13 )
+bus = "PlayerDeath"
+
+[node name="AudioStreamPlayer5" type="AudioStreamPlayer" parent="DeathSoundPlayer"]
+stream = ExtResource( 10 )
+bus = "PlayerDeath"
+
+[node name="DeathSoundPlayer2" parent="." instance=ExtResource( 24 )]
+numberToPlay = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="DeathSoundPlayer2"]
+stream = ExtResource( 15 )
+bus = "PlayerDeath"
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="DeathSoundPlayer2"]
+stream = ExtResource( 14 )
+bus = "PlayerDeath"
+
+[node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="DeathSoundPlayer2"]
+stream = ExtResource( 23 )
+bus = "PlayerDeath"
+
+[node name="AudioStreamPlayer4" type="AudioStreamPlayer" parent="DeathSoundPlayer2"]
+stream = ExtResource( 9 )
+bus = "PlayerDeath"
+
+[node name="AudioStreamPlayer5" type="AudioStreamPlayer" parent="DeathSoundPlayer2"]
+stream = ExtResource( 18 )
+bus = "PlayerDeath"
+
+[node name="DeathSoundPlayer3" parent="." instance=ExtResource( 24 )]
+numberToPlay = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="DeathSoundPlayer3"]
+stream = ExtResource( 16 )
+volume_db = -5.0
+bus = "PlayerDeath"
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="DeathSoundPlayer3"]
+stream = ExtResource( 20 )
+volume_db = -5.0
+bus = "PlayerDeath"
+
+[node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="DeathSoundPlayer3"]
+stream = ExtResource( 11 )
+volume_db = -5.0
+bus = "PlayerDeath"
+
+[node name="AudioStreamPlayer4" type="AudioStreamPlayer" parent="DeathSoundPlayer3"]
+stream = ExtResource( 19 )
+volume_db = -5.0
+bus = "PlayerDeath"
+
+[node name="AudioStreamPlayer5" type="AudioStreamPlayer" parent="DeathSoundPlayer3"]
+stream = ExtResource( 12 )
+volume_db = -5.0
+bus = "PlayerDeath"
+
+[node name="PuffSound" parent="." instance=ExtResource( 24 )]
+numberToPlay = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="PuffSound"]
+stream = ExtResource( 28 )
+volume_db = -5.0
+bus = "PuffSound"
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="PuffSound"]
+stream = ExtResource( 27 )
+volume_db = -5.0
+bus = "PuffSound"
+
+[node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="PuffSound"]
+stream = ExtResource( 26 )
+volume_db = -5.0
+bus = "PuffSound"
+
+[node name="AudioStreamPlayer4" type="AudioStreamPlayer" parent="PuffSound"]
+stream = ExtResource( 19 )
+volume_db = -5.0
+bus = "PuffSound"
+
+[node name="AudioStreamPlayer5" type="AudioStreamPlayer" parent="PuffSound"]
+stream = ExtResource( 25 )
+volume_db = -5.0
+bus = "PuffSound"
+
 [node name="Visuals" type="Node2D" parent="."]
 
 [node name="Sprite" type="Sprite" parent="Visuals"]
-scale = Vector2( 0.9, 0.9 )
+position = Vector2( 0, -4 )
+rotation = 1.5708
 texture = ExtResource( 1 )
 offset = Vector2( 0, -8 )
 
@@ -189,11 +326,12 @@ position = Vector2( 8, 0 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 2 )
 animation = "ghost"
-frame = 2
+frame = 3
+playing = true
 offset = Vector2( 9.325, -32 )
 
 [node name="Particles2D" type="Particles2D" parent="Visuals/Vfx"]
-material = SubResource( 4 )
+material = SubResource( 3 )
 position = Vector2( 5.55003, -4.43641 )
 emitting = false
 amount = 15
@@ -201,9 +339,9 @@ lifetime = 1.5
 one_shot = true
 explosiveness = 0.9
 local_coords = false
-process_material = SubResource( 5 )
+process_material = SubResource( 8 )
 texture = ExtResource( 8 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -0.0922623, -8.05318 )
-shape = SubResource( 3 )
+shape = SubResource( 9 )
