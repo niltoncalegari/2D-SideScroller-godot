@@ -29,7 +29,7 @@ func on_window_mode_entered():
 	update_diplay()
 
 func update_bus_volume(percent, busIndexName):
-	var busIdx = AudioServer.get_bus_index("Music")
+	var busIdx = AudioServer.get_bus_index(busIndexName)
 	var volumeDb = linear2db(percent)
 	AudioServer.set_bus_volume_db(busIdx, volumeDb)
 	

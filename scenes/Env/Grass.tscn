@@ -19,14 +19,14 @@ shader_type canvas_item;
 render_mode blend_mix;
 
 // Wind settings.
-uniform float speed = 10.0;
+uniform float speed = 1.0;
 uniform float minStrength : hint_range(0.0, 1.0) = 0.05;
 uniform float maxStrength : hint_range(0.0, 1.0) = 0.01;
 uniform float strengthScale = 100.0;
 uniform float interval = 3.5;
 uniform float detail = 1.0;
 uniform float distortion : hint_range(0.0, 1.0);
-uniform float heightOffset : hint_range(0.1, 3.0);
+uniform float heightOffset : hint_range(0.0, 1.0);
 
 // With the offset value, you can if you want different moves for each asset. Just put a random value (1, 2, 3) in the editor. Don't forget to mark the material as unique if you use this
 uniform float offset = 0; 
@@ -49,7 +49,7 @@ void vertex() {
 
 [sub_resource type="ShaderMaterial" id=2]
 shader = SubResource( 1 )
-shader_param/speed = 3.0
+shader_param/speed = 2.0
 shader_param/minStrength = 0.05
 shader_param/maxStrength = 0.01
 shader_param/strengthScale = 100.0
